@@ -8,7 +8,7 @@ camera. All processing happens **on-device in the browser** — no video is ever
 
 Built for the **Congressional App Challenge 2026**.
 
-**Live site:** `https://<your-username>.github.io/relay-aac/`
+**Live site:** `https://<your-username>.github.io/relay-cac/`
 _(fill this in once GitHub Pages is enabled — see below)_
 
 ## Versions
