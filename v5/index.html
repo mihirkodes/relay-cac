@@ -138,7 +138,7 @@
        phrases, places and medicines get their own <b>My words</b> category; and all of them are suggested
        first on the keyboard. Separate with commas or new lines. Saved only on this device.</p>
     <div class="field"><label for="pfNames">Names — family, caregivers, doctors, pets</label>
-      <textarea id="pfNames" rows="2" placeholder="e.g. Priya, Dr. Patel, Nurse Maria"></textarea></div>
+      <textarea id="pfNames" rows="2" placeholder="e.g. Emily, Dr. Johnson, Nurse Sarah"></textarea></div>
     <div class="field"><label for="pfMeds">Medicines &amp; conditions</label>
       <textarea id="pfMeds" rows="2" placeholder="e.g. Metformin, Lisinopril, arthritis"></textarea></div>
     <div class="field"><label for="pfPlaces">Places</label>
@@ -261,9 +261,9 @@ function buildTrie(){
   trie.insert("i", WORDS.length + 1, "I");
   for(const w in learned) trie.insert(w, W_LEARNED + learned[w]);
   [...splitList(profile.names), ...splitList(profile.meds), ...splitList(profile.places)].forEach(entry=>{
-    trie.insert(entry.toLowerCase(), W_PERSONAL, entry);            // "dr. patel" → "Dr. Patel"
+    trie.insert(entry.toLowerCase(), W_PERSONAL, entry);            // "dr. johnson" → "Dr. Johnson"
     const parts = entry.split(/\s+/);
-    if(parts.length > 1) parts.forEach(p=> trie.insert(p.toLowerCase(), W_PERSONAL - 1, p)); // "patel" → "Patel"
+    if(parts.length > 1) parts.forEach(p=> trie.insert(p.toLowerCase(), W_PERSONAL - 1, p)); // "johnson" → "Johnson"
   });
   phrases = (profile.phrases || "").split("\n").map(x=>x.trim()).filter(Boolean);
 }
